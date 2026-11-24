@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Technical Expertise — A structured overview of security domains, tools, and technical competencies.">
+  <meta name="theme-color" content="#050505">
+  <title>TECHNICAL EXPERTISE // CYBER_SEC</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Global Styles (Phase 1) -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Page-Specific Styles -->
+  <link rel="stylesheet" href="expertise.css">
+</head>
+<body class="is-loading">
+  <!-- ============================================================
+       SCROLL PROGRESS BAR
+       ============================================================ -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar" id="scroll-progress-bar"></div>
+  </div>
+
+  <!-- ============================================================
+       CUSTOM CURSOR
+       ============================================================ -->
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       PRELOADER
+       ============================================================ -->
+  <div id="preloader" class="preloader" role="status" aria-live="polite" aria-label="System booting">
+    <div class="preloader__inner">
+      <div class="preloader__terminal">
+        <div class="preloader__line">
+          <span class="preloader__prompt">&gt;</span>
+          <span class="preloader__text" id="preloader-text">LOADING MODULE MATRIX...</span>
+          <span class="preloader__caret" aria-hidden="true">_</span>
+        </div>
+        <div class="preloader__bar-track" aria-hidden="true">
+          <div class="preloader__bar-fill" id="preloader-bar"></div>
+        </div>
+        <div class="preloader__meta">
+          <span id="preloader-status">INITIALIZING CAPABILITY MODULES</span>
+          <span id="preloader-percent">0%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       NAVBAR (Expertise active)
+       ============================================================ -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="CYBER_SEC Home">
+        <span class="navbar__logo-icon" aria-hidden="true"></span>
+        <span class="navbar__logo-text">CYBER<span class="accent">_</span>SEC</span>
+      </a>
+
+      <nav class="navbar__nav" id="navbar-nav" aria-label="Primary navigation">
+        <ul class="navbar__links">
+          <li><a href="index.html" class="navbar__link">Home</a></li>
+          <li><a href="about.html" class="navbar__link">About</a></li>
+          <li><a href="expertise.html" class="navbar__link is-active">Expertise</a></li>
+          <li><a href="projects.html" class="navbar__link">Projects</a></li>
+          <li><a href="research.html" class="navbar__link">Research</a></li>
+          <li><a href="defense.html" class="navbar__link">Defense</a></li>
+          <li><a href="community.html" class="navbar__link">Community</a></li>
+          <li><a href="cv.html" class="navbar__link">CV</a></li>
+          <li><a href="contact.html" class="navbar__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="navbar__right">
+        <div class="navbar__status" aria-label="System online">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="status-text">SYSTEM ONLINE</span>
+        </div>
+        <button class="navbar__toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <ul class="mobile-nav__links">
+        <li><a href="index.html" class="mobile-nav__link">Home</a></li>
+        <li><a href="about.html" class="mobile-nav__link">About</a></li>
+        <li><a href="expertise.html" class="mobile-nav__link is-active">Expertise</a></li>
+        <li><a href="projects.html" class="mobile-nav__link">Projects</a></li>
+        <li><a href="research.html" class="mobile-nav__link">Research</a></li>
+        <li><a href="defense.html" class="mobile-nav__link">Defense</a></li>
+        <li><a href="community.html" class="mobile-nav__link">Community</a></li>
+        <li><a href="cv.html" class="mobile-nav__link">CV</a></li>
+        <li><a href="contact.html" class="mobile-nav__link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ==========================================================
+         PAGE HEADER
+         ========================================================== -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="page-hero__bg" aria-hidden="true">
+        <div class="page-hero__grid"></div>
+        <div class="page-hero__glow"></div>
+      </div>
+      <div class="cyber-anim-container" data-anim="network" aria-hidden="true"></div>
+<div class="container page-hero__inner">
+        <p class="page-hero__eyebrow" data-reveal="hero">// SYSTEM MODULES &amp; CAPABILITIES</p>
+        <h1 class="page-hero__title" id="page-title" data-reveal="hero">
+          <span class="sr-only">Technical Expertise</span>
+          <span class="glitch" data-text="TECHNICAL" aria-hidden="true">TECHNICAL</span>
+          <span class="glitch page-hero__title--outline" data-text="EXPERTISE" aria-hidden="true">EXPERTISE</span>
+        </h1>
+        <p class="page-hero__subtitle" data-reveal="hero">A structured overview of security domains, tools, and technical competencies.</p>
+        <div class="page-hero__meta" data-reveal="hero">
+          <span class="page-hero__meta-item"><span class="meta-dot"></span>MATRIX STATUS: ONLINE</span>
+          <span class="page-hero__meta-item"><span class="meta-dot meta-dot--magenta"></span>MODULES LOADED: 06</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         MODULE MATRIX
+         ========================================================== -->
+    <section class="matrix-section" aria-labelledby="matrix-heading">
+      <div class="container">
+        <div class="matrix-header">
+          <p class="section-tag">// CAPABILITY MATRIX</p>
+          <h2 class="section-heading" id="matrix-heading">MODULE <span class="section-heading--outline">OVERVIEW</span></h2>
+        </div>
+
+        <div class="matrix-grid" id="matrix-grid">
+          <!-- Panel 1: Cybersecurity -->
+          <article class="module-panel" data-module="01">
+            <div class="module-panel__scan" aria-hidden="true"></div>
+            <header class="module-panel__head">
+              <span class="module-panel__id">[ MOD_01 ]</span>
+              <span class="module-panel__status">ONLINE</span>
+            </header>
+            <div class="module-panel__body">
+              <h3 class="module-panel__title">Cybersecurity</h3>
+              <p class="module-panel__desc">Core offensive and defensive security practices focused on identifying, assessing, and understanding vulnerabilities.</p>
+              <ul class="module-panel__skills">
+                <li class="skill-item">
+                  <span class="skill-item__name">Ethical Hacking</span>
+                  <span class="skill-item__status skill-item__status--active">[ ACTIVE ]</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-item__name">Web Security</span>
+                  <span class="skill-item__status skill-item__status--learning">[ LEARNING ]</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-item__name">Vulnerability Assessment</span>
+                  <span class="skill-item__status skill-item__status--active">[ ACTIVE ]</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Panel 2: Network Security -->
+          <article class="module-panel" data-module="02">
+            <div class="module-panel__scan" aria-hidden="true"></div>
+            <header class="module-panel__head">
+              <span class="module-panel__id">[ MOD_02 ]</span>
+              <span class="module-panel__status">ONLINE</span>
+            </header>
+            <div class="module-panel__body">
+              <h3 class="module-panel__title">Network Security</h3>
+              <p class="module-panel__desc">Analysis and monitoring of network infrastructure, protocols, and traffic to detect exposure and anomalies.</p>
+              <ul class="module-panel__skills">
+                <li class="skill-item">
+                  <span class="skill-item__name">Networking</span>
+                  <span class="skill-item__status skill-item__status--active">[ ACTIVE ]</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-item__name">Nmap</span>
+                  <span class="skill-item__status skill-item__status--active">[ ACTIVE ]</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-item__name">Wireshark</span>
+                  <span class="skill-item__status skill-item__status--learning">[ LEARNING ]</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-item__name">Protocol Analysis</span>
+                  <span class="skill-item__status skill-item__status--learning">[ LEARNING ]</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Panel 3: OSINT -->
+          <article class="module-panel" data-module="03">
+            <div class="module-panel__scan" aria-hidden="true"></div>
+            <header class="module-panel__head">
+              <span class="module-panel__id">[ MOD_03 ]</span>
+              <span class="module-panel__status">ONLINE</span>
+            </header>
+            <div class="module-panel__body">
+              <h3 class="module-panel__title">OSINT</h3>
+              <p class="module-panel__desc">Structured intelligence gathering from open sources to map digital exposure and support investigations.</p>
+              <ul class="module-panel__skills">
+                <li class="skill-item">
+                  <span class="skill-item__name">Information Gathering</span>
+                  <span class="skill-item__status skill-item__status--active">[ ACTIVE ]</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-item__name">Digital Footprinting</span>
+                  <span class="skill-item__status skill-item__status--active">[ ACTIVE ]</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Panel 4: Programming -->
+          <article class="module-panel" data-module="04">
+            <div class="module-panel__scan" aria-hidden="true"></div>
+            <header class="module-panel__head">
+              <span class="module-panel__id">[ MOD_04 ]</span>
+              <span class="module-panel__status">ONLINE</span>
+            </header>
+            <div class="module-panel__body">
+              <h3 class="module-panel__title">Programming</h3>
+              <p class="module-panel__desc">Scripting and development capabilities for automation, tooling, and security-focused problem solving.</p>
+              <ul class="module-panel__skills">
+                <li class="skill-item">
+                  <span class="skill-item__name">Python</span>
+                  <span class="skill-item__status skill-item__status--active">[ ACTIVE ]</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-item__name">PHP</span>
+                  <span class="skill-item__status skill-item__status--learning">[ LEARNING ]</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-item__name">JavaScript</span>
+                  <span class="skill-item__status skill-item__status--active">[ ACTIVE ]</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-item__name">Bash Scripting</span>
+                  <span class="skill-item__status skill-item__status--learning">[ LEARNING ]</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Panel 5: Systems -->
+          <article class="module-panel" data-module="05">
+            <div class="module-panel__scan" aria-hidden="true"></div>
+            <header class="module-panel__head">
+              <span class="module-panel__id">[ MOD_05 ]</span>
+              <span class="module-panel__status">ONLINE</span>
+            </header>
+            <div class="module-panel__body">
+              <h3 class="module-panel__title">Systems</h3>
+              <p class="module-panel__desc">Operational familiarity with security-focused and enterprise environments for testing, hardening, and administration.</p>
+              <ul class="module-panel__skills">
+                <li class="skill-item">
+                  <span class="skill-item__name">Linux (Kali/Ubuntu)</span>
+                  <span class="skill-item__status skill-item__status--active">[ ACTIVE ]</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-item__name">Windows Server</span>
+                  <span class="skill-item__status skill-item__status--learning">[ LEARNING ]</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Panel 6: AI & Security -->
+          <article class="module-panel" data-module="06">
+            <div class="module-panel__scan" aria-hidden="true"></div>
+            <header class="module-panel__head">
+              <span class="module-panel__id">[ MOD_06 ]</span>
+              <span class="module-panel__status">ONLINE</span>
+            </header>
+            <div class="module-panel__body">
+              <h3 class="module-panel__title">AI &amp; Security</h3>
+              <p class="module-panel__desc">Exploring the convergence of artificial intelligence and security for analysis, augmentation, and emerging defense workflows.</p>
+              <ul class="module-panel__skills">
+                <li class="skill-item">
+                  <span class="skill-item__name">RAG</span>
+                  <span class="skill-item__status skill-item__status--learning">[ LEARNING ]</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-item__name">LLMs</span>
+                  <span class="skill-item__status skill-item__status--learning">[ LEARNING ]</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-item__name">FAISS</span>
+                  <span class="skill-item__status skill-item__status--learning">[ LEARNING ]</span>
+                </li>
+                <li class="skill-item">
+                  <span class="skill-item__name">AI-driven Security</span>
+                  <span class="skill-item__status skill-item__status--learning">[ LEARNING ]</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER (same as Phase 1)
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <p class="footer__copy">&copy; <span id="footer-year"></span> CYBER_SEC. All rights reserved.</p>
+      <p class="footer__tagline">Designed for Security</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="main.js"></script>
+  <script src="animations.js"></script>
+  <script src="expertise.js"></script>
+  <script src="cyber-anim.js" defer></script>
+</body>
+</html>

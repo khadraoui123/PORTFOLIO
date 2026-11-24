@@ -1,0 +1,293 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Classified Dossier — Cybersecurity Enthusiast focused on security research, ethical hacking, defensive security, and specialized security tools.">
+  <meta name="theme-color" content="#050505">
+  <title>THE PROFILE // CYBER_SEC</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Global Styles (Phase 1) -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Page-Specific Styles -->
+  <link rel="stylesheet" href="about.css">
+</head>
+<body class="is-loading">
+  <!-- ============================================================
+       SCROLL PROGRESS BAR
+       ============================================================ -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar" id="scroll-progress-bar"></div>
+  </div>
+
+  <!-- ============================================================
+       CUSTOM CURSOR
+       ============================================================ -->
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       PRELOADER (reused global behavior)
+       ============================================================ -->
+  <div id="preloader" class="preloader" role="status" aria-live="polite" aria-label="System booting">
+    <div class="preloader__inner">
+      <div class="preloader__terminal">
+        <div class="preloader__line">
+          <span class="preloader__prompt">&gt;</span>
+          <span class="preloader__text" id="preloader-text">LOADING DOSSIER...</span>
+          <span class="preloader__caret" aria-hidden="true">_</span>
+        </div>
+        <div class="preloader__bar-track" aria-hidden="true">
+          <div class="preloader__bar-fill" id="preloader-bar"></div>
+        </div>
+        <div class="preloader__meta">
+          <span id="preloader-status">ACCESSING CLASSIFIED RECORDS</span>
+          <span id="preloader-percent">0%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       NAVBAR (same structure as Phase 1, About active)
+       ============================================================ -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="CYBER_SEC Home">
+        <span class="navbar__logo-icon" aria-hidden="true"></span>
+        <span class="navbar__logo-text">CYBER<span class="accent">_</span>SEC</span>
+      </a>
+
+      <nav class="navbar__nav" id="navbar-nav" aria-label="Primary navigation">
+        <ul class="navbar__links">
+          <li><a href="index.html" class="navbar__link">Home</a></li>
+          <li><a href="about.html" class="navbar__link is-active">About</a></li>
+          <li><a href="expertise.html" class="navbar__link">Expertise</a></li>
+          <li><a href="projects.html" class="navbar__link">Projects</a></li>
+          <li><a href="research.html" class="navbar__link">Research</a></li>
+          <li><a href="defense.html" class="navbar__link">Defense</a></li>
+          <li><a href="community.html" class="navbar__link">Community</a></li>
+          <li><a href="cv.html" class="navbar__link">CV</a></li>
+          <li><a href="contact.html" class="navbar__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="navbar__right">
+        <div class="navbar__status" aria-label="System online">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="status-text">SYSTEM ONLINE</span>
+        </div>
+        <button class="navbar__toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <ul class="mobile-nav__links">
+        <li><a href="index.html" class="mobile-nav__link">Home</a></li>
+        <li><a href="about.html" class="mobile-nav__link is-active">About</a></li>
+        <li><a href="expertise.html" class="mobile-nav__link">Expertise</a></li>
+        <li><a href="projects.html" class="mobile-nav__link">Projects</a></li>
+        <li><a href="research.html" class="mobile-nav__link">Research</a></li>
+        <li><a href="defense.html" class="mobile-nav__link">Defense</a></li>
+        <li><a href="community.html" class="mobile-nav__link">Community</a></li>
+        <li><a href="cv.html" class="mobile-nav__link">CV</a></li>
+        <li><a href="contact.html" class="mobile-nav__link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ==========================================================
+         PAGE HERO
+         ========================================================== -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="page-hero__bg" aria-hidden="true">
+        <div class="page-hero__grid"></div>
+        <div class="page-hero__glow"></div>
+      </div>
+      <div class="cyber-anim-container" data-anim="matrix" aria-hidden="true"></div>
+<div class="container page-hero__inner">
+        <p class="page-hero__eyebrow" id="about-eyebrow">// CLASSIFIED DOSSIER // ACCESS LEVEL: PUBLIC</p>
+        <h1 class="page-hero__title" id="page-title">
+          <span class="sr-only">The Profile</span>
+          <span class="glitch about-title" id="about-title" data-text="THE PROFILE." aria-hidden="true">THE PROFILE.</span>
+        </h1>
+        <div class="page-hero__meta">
+          <span class="page-hero__meta-item"><span class="meta-dot"></span>RECORD STATUS: VERIFIED</span>
+          <span class="page-hero__meta-item"><span class="meta-dot meta-dot--magenta"></span>DOCUMENT TYPE: DATA DOSSIER</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SECTION 1: ID CARD + BIOGRAPHY
+         ========================================================== -->
+    <section class="dossier-section" aria-labelledby="dossier-heading">
+      <div class="container">
+        <div class="dossier-grid">
+          <!-- Left: ID Card -->
+          <aside class="id-card" id="id-card" aria-label="Operator identification card">
+            <div class="id-card__scanline" aria-hidden="true"></div>
+            <div class="id-card__header">
+              <span class="id-card__header-left">// OPERATOR ID</span>
+              <span class="id-card__header-right">VERIFIED</span>
+            </div>
+
+            <div class="id-card__body">
+              <div class="id-card__photo" aria-hidden="true">
+                <div class="id-card__photo-frame">
+                  <div class="id-card__photo-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round">
+                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                      <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                  </div>
+                  <span class="id-card__photo-label">IDENTITY PROTECTED</span>
+                </div>
+              </div>
+
+              <dl class="id-card__fields">
+                <div class="id-card__field">
+                  <dt class="id-card__label">ALIAS:</dt>
+                  <dd class="id-card__value">WAJIH KHADRAOUI_X7</dd>
+                </div>
+                <div class="id-card__field">
+                  <dt class="id-card__label">ROLE:</dt>
+                  <dd class="id-card__value">Security Researcher &amp; Tool Developer</dd>
+                </div>
+                <div class="id-card__field">
+                  <dt class="id-card__label">CLEARANCE:</dt>
+                  <dd class="id-card__value id-card__value--lime">Authorized</dd>
+                </div>
+                <div class="id-card__field">
+                  <dt class="id-card__label">STATUS:</dt>
+                  <dd class="id-card__value id-card__value--lime">Active Monitoring</dd>
+                </div>
+                <div class="id-card__field">
+                  <dt class="id-card__label">FOCUS:</dt>
+                  <dd class="id-card__value">Defensive Security, Ethical Hacking.</dd>
+                </div>
+              </dl>
+            </div>
+
+            <div class="id-card__footer">
+              <span class="id-card__footer-code">REF: CS-DOSSIER-001</span>
+              <span class="id-card__footer-code">ENCRYPTED</span>
+            </div>
+          </aside>
+
+          <!-- Right: Biography -->
+          <div class="dossier-bio" id="dossier-bio">
+            <p class="section-tag" id="dossier-tag">// EXECUTIVE RECORD</p>
+            <h2 class="section-heading" id="dossier-heading">EXECUTIVE <span class="section-heading--outline">SUMMARY</span></h2>
+            <div class="dossier-bio__content">
+              <p class="dossier-bio__lead">I am a cybersecurity enthusiast focused on security research, ethical hacking, defensive security, and the development of specialized security tools. My primary focus is cybersecurity, while web development remains a personal hobby. I actively work on independent projects, including a defensive security system currently under development.</p>
+
+              <div class="dossier-bio__subsection">
+                <h3 class="dossier-bio__subtitle">
+                  <span class="dossier-bio__subtitle-marker" aria-hidden="true"></span>
+                  COMMUNITY &amp; COLLABORATION
+                </h3>
+                <p class="dossier-bio__text">Beyond individual research, I engage with technical communities, cybersecurity forums, competitions, and collaborative initiatives. Some of my projects and research activities remain private or under development.</p>
+              </div>
+
+              <div class="dossier-bio__statusbar">
+                <div class="statusbar-item">
+                  <span class="statusbar-item__label">OPERATIONAL MODE</span>
+                  <span class="statusbar-item__value statusbar-item__value--cyan">RESEARCH &amp; DEVELOPMENT</span>
+                </div>
+                <div class="statusbar-item">
+                  <span class="statusbar-item__label">THREAT POSTURE</span>
+                  <span class="statusbar-item__value statusbar-item__value--lime">DEFENSIVE</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SECTION 2: CORE PHILOSOPHY
+         ========================================================== -->
+    <section class="philosophy-section" aria-labelledby="philosophy-heading">
+      <div class="container">
+        <div class="section-header">
+          <p class="section-tag">// OPERATIONAL MINDSET</p>
+          <h2 class="section-heading" id="philosophy-heading">CORE <span class="section-heading--outline">PHILOSOPHY</span></h2>
+        </div>
+
+        <div class="philosophy-grid" id="philosophy-grid">
+          <article class="philosophy-card">
+            <div class="philosophy-card__index">01</div>
+            <h3 class="philosophy-card__title">RESEARCH</h3>
+            <p class="philosophy-card__desc">Understand the architecture before testing the limits.</p>
+          </article>
+          <article class="philosophy-card">
+            <div class="philosophy-card__index">02</div>
+            <h3 class="philosophy-card__title">BUILD</h3>
+            <p class="philosophy-card__desc">Transform knowledge into practical tools and resilient systems.</p>
+          </article>
+          <article class="philosophy-card">
+            <div class="philosophy-card__index">03</div>
+            <h3 class="philosophy-card__title">ANALYZE</h3>
+            <p class="philosophy-card__desc">Dissect behavior, identify patterns, and expose hidden weaknesses.</p>
+          </article>
+          <article class="philosophy-card">
+            <div class="philosophy-card__index">04</div>
+            <h3 class="philosophy-card__title">DEFEND</h3>
+            <p class="philosophy-card__desc">Apply insight to harden systems and protect what matters.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SECTION 3: WEB DEV AS A HOBBY
+         ========================================================== -->
+    <section class="contrast-section" aria-labelledby="contrast-heading">
+      <div class="container">
+        <div class="contrast-panel">
+          <div class="contrast-panel__header">
+            <p class="section-tag">// OPERATIONAL CONTEXT</p>
+            <div class="contrast-panel__badges">
+              <span class="contrast-badge contrast-badge--cyan">PRIMARY FOCUS: CYBERSECURITY</span>
+              <span class="contrast-badge contrast-badge--magenta">HOBBY: WEB DEVELOPMENT</span>
+            </div>
+          </div>
+          <div class="contrast-panel__body">
+            <h2 class="section-heading section-heading--sm" id="contrast-heading">TOOLING, <span class="section-heading--outline">NOT DISTRACTION</span></h2>
+            <p class="contrast-panel__text">Web development is maintained as a personal hobby and a practical support skill. It is used to build interfaces for security tools, prototype concepts quickly, and gain a deeper understanding of web vulnerabilities from a builder's perspective. Cybersecurity remains the primary mission; web development serves that mission where it adds value.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER (same as Phase 1)
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <p class="footer__copy">&copy; <span id="footer-year"></span> CYBER_SEC. All rights reserved.</p>
+      <p class="footer__tagline">Designed for Security</p>
+    </div>
+  </footer>
+
+  <!-- Scripts: GSAP, ScrollTrigger, Lenis, Global JS, Page JS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="main.js"></script>
+  <script src="animations.js"></script>
+  <script src="about.js"></script>
+  <script src="cyber-anim.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750">
+  <defs><linearGradient id="b" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#141414"/><stop offset="100%" stop-color="#090909"/></linearGradient></defs>
+  <rect width="1200" height="750" fill="url(#b)"/>
+  <g stroke="#292929" stroke-width="1">
+    <line x1="0" y1="375" x2="1200" y2="375" stroke-opacity=".4"/><line x1="600" y1="0" x2="600" y2="750" stroke-opacity=".4"/>
+  </g>
+  <rect x="180" y="150" width="340" height="210" fill="none" stroke="#f2f0ea" stroke-opacity=".12"/>
+  <rect x="680" y="150" width="340" height="210" fill="none" stroke="#f2f0ea" stroke-opacity=".12"/>
+  <rect x="180" y="430" width="340" height="180" fill="none" stroke="#f2f0ea" stroke-opacity=".12"/>
+  <rect x="680" y="430" width="340" height="180" fill="none" stroke="#ff3030" stroke-opacity=".25"/>
+  <g font-family="monospace" fill="#929292" font-size="12">
+    <text x="210" y="190" fill="#f2f0ea" fill-opacity=".5">SOURCE INDEX</text>
+    <text x="210" y="225" fill-opacity=".5">public records .......... 142</text>
+    <text x="210" y="250" fill-opacity=".5">domain data ............. 38</text>
+    <text x="210" y="275" fill-opacity=".5">metadata artifacts ...... 67</text>
+    <text x="710" y="190" fill="#f2f0ea" fill-opacity=".5">ENTITY GRAPH</text>
+    <circle cx="820" cy="270" r="18" fill="none" stroke="#f2f0ea" stroke-opacity=".2"/>
+    <circle cx="900" cy="240" r="12" fill="none" stroke="#f2f0ea" stroke-opacity=".15"/>
+    <circle cx="890" y="305" r="12" fill="none" stroke="#f2f0ea" stroke-opacity=".15"/>
+    <line x1="836" y1="262" x2="889" y2="245" stroke="#f2f0ea" stroke-opacity=".12"/>
+    <line x1="834" y1="282" x2="879" y2="298" stroke="#f2f0ea" stroke-opacity=".12"/>
+    <text x="210" y="470" fill="#f2f0ea" fill-opacity=".5">TIMELINE</text>
+    <path d="M210 530 L280 530 L320 500 L400 500 L450 540 L490 520" fill="none" stroke="#f2f0ea" stroke-opacity=".25" stroke-width="1.5"/>
+    <text x="710" y="470" fill="#ff3030" fill-opacity=".8">CORRELATION FLAG</text>
+    <text x="710" y="505" fill-opacity=".5">cross-reference match found</text>
+    <text x="710" y="530" fill-opacity=".5">confidence: review required</text>
+  </g>
+  <text x="80" y="110" fill="#f2f0ea" fill-opacity=".55" font-family="monospace" font-size="13">[ OPEN-SOURCE INTELLIGENCE WORKSPACE ]</text>
+  <text x="80" y="670" fill="#929292" font-family="monospace" font-size="11" letter-spacing="2">OSINT / RESEARCH</text>
+</svg>

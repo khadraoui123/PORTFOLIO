@@ -1,0 +1,498 @@
+/* ============================================================
+   PROJECTS / OPERATIONS PAGE - CASE FILE ARCHIVE STYLES
+   Design System: #050505 / #f5f5f5 / #00f0ff / #ff2a6d / #05ffa1
+   Typography: Space Grotesk (headings) + JetBrains Mono (data)
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   1. SHARED UTILITIES
+   ------------------------------------------------------------ */
+.container {
+  width: min(var(--container), calc(100% - (var(--gutter) * 2)));
+  margin-inline: auto;
+}
+
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--ff-mono);
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 1rem;
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+}
+
+.section-tag::before {
+  content: '';
+  width: 24px;
+  height: 1px;
+  background: var(--cyan);
+  box-shadow: 0 0 8px var(--cyan-glow);
+  flex-shrink: 0;
+}
+
+.section-heading {
+  font-family: var(--ff-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  line-height: 0.95;
+  letter-spacing: -0.03em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.section-heading--outline {
+  color: transparent;
+  -webkit-text-stroke: 1px rgba(245, 245, 245, 0.55);
+  text-stroke: 1px rgba(245, 245, 245, 0.55);
+}
+
+/* ------------------------------------------------------------
+   2. PAGE HERO
+   ------------------------------------------------------------ */
+.page-hero {
+  position: relative;
+  padding: calc(var(--nav-h) + 5rem) 0 4.5rem;
+  border-bottom: 1px solid #222;
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.page-hero__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.page-hero__grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(245, 245, 245, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(245, 245, 245, 0.03) 1px, transparent 1px);
+  background-size: 80px 80px;
+  mask-image: radial-gradient(ellipse 65% 55% at 50% 30%, black 30%, transparent 100%);
+  -webkit-mask-image: radial-gradient(ellipse 65% 55% at 50% 30%, black 30%, transparent 100%);
+}
+
+.page-hero__glow {
+  position: absolute;
+  width: 520px;
+  height: 520px;
+  top: -10%;
+  right: 8%;
+  background: radial-gradient(circle, rgba(0, 240, 255, 0.1), transparent 70%);
+  filter: blur(40px);
+  opacity: 0.6;
+}
+
+.page-hero__inner { position: relative; z-index: 1; }
+
+.page-hero__eyebrow {
+  font-family: var(--ff-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  margin-bottom: 1.25rem;
+  text-shadow: 0 0 12px rgba(0, 240, 255, 0.25);
+}
+
+.page-hero__title {
+  font-family: var(--ff-display);
+  font-weight: 700;
+  font-size: clamp(2.8rem, 9vw, 6.8rem);
+  line-height: 0.88;
+  letter-spacing: -0.04em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 1.5rem;
+}
+
+.page-hero__title .glitch { display: block; position: relative; color: var(--text); }
+.page-hero__title--outline.glitch { color: transparent; -webkit-text-stroke: 1px rgba(245,245,245,0.65); text-stroke: 1px rgba(245,245,245,0.65); }
+.page-hero__title .glitch::before { color: var(--magenta); text-shadow: -2px 0 var(--cyan); }
+.page-hero__title .glitch::after { color: var(--cyan); text-shadow: 2px 0 var(--magenta); }
+.page-hero__title--outline.glitch::before { color: transparent; -webkit-text-stroke: 1px var(--magenta); text-shadow: -2px 0 rgba(0,240,255,0.5); }
+.page-hero__title--outline.glitch::after { color: transparent; -webkit-text-stroke: 1px var(--cyan); text-shadow: 2px 0 rgba(255,42,109,0.5); }
+
+.page-hero__subtitle {
+  font-family: var(--ff-mono);
+  font-size: 0.92rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  max-width: 64ch;
+  margin-bottom: 2rem;
+}
+
+.page-hero__meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem 2.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #222;
+}
+
+.page-hero__meta-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--ff-mono);
+  font-size: 0.68rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+.meta-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--lime); box-shadow: 0 0 8px var(--lime-glow); flex-shrink: 0; }
+.meta-dot--magenta { background: var(--magenta); box-shadow: 0 0 8px var(--magenta-glow); }
+
+/* ------------------------------------------------------------
+   3. ARCHIVE SECTION
+   ------------------------------------------------------------ */
+.archive-section {
+  padding: 5.5rem 0;
+  border-bottom: 1px solid #222;
+}
+
+.archive-header {
+  margin-bottom: 2.5rem;
+}
+
+/* ------------------------------------------------------------
+   4. FILTER BAR
+   ------------------------------------------------------------ */
+.filter-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 2.5rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid #222;
+}
+
+.filter-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.7rem 1rem;
+  font-family: var(--ff-mono);
+  font-size: 0.68rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  background: rgba(255, 255, 255, 0.01);
+  border: 1px solid var(--line-strong);
+  transition: color var(--dur) var(--ease), border-color var(--dur) var(--ease), background var(--dur) var(--ease), box-shadow var(--dur) var(--ease);
+  cursor: pointer;
+}
+
+.filter-btn:hover {
+  color: var(--text);
+  border-color: rgba(0, 240, 255, 0.4);
+}
+
+.filter-btn.is-active {
+  color: var(--cyan);
+  border-color: rgba(0, 240, 255, 0.6);
+  background: rgba(0, 240, 255, 0.06);
+  box-shadow: 0 0 16px rgba(0, 240, 255, 0.1), inset 0 0 20px rgba(0, 240, 255, 0.03);
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.25);
+}
+
+.filter-btn:focus-visible {
+  outline: 2px solid var(--cyan);
+  outline-offset: 2px;
+}
+
+/* ------------------------------------------------------------
+   5. PROJECT GRID
+   ------------------------------------------------------------ */
+.project-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1.5rem;
+}
+
+/* ------------------------------------------------------------
+   6. CASE FILE CARD
+   ------------------------------------------------------------ */
+.case-file {
+  position: relative;
+  background: #0a0a0a;
+  border: 1px solid rgba(0, 240, 255, 0.28);
+  box-shadow: 0 0 0 1px rgba(0, 240, 255, 0.03), inset 0 0 40px rgba(0, 240, 255, 0.01);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  transition: border-color var(--dur) var(--ease), box-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
+  isolation: isolate;
+}
+
+.case-file:hover {
+  border-color: var(--cyan);
+  box-shadow: 0 0 0 1px rgba(0, 240, 255, 0.18), 0 0 30px rgba(0, 240, 255, 0.1), inset 0 0 50px rgba(0, 240, 255, 0.03);
+  transform: translateY(-2px);
+}
+
+/* Hidden state for filtering */
+.case-file.is-hidden {
+  display: none;
+}
+
+/* Horizontal laser scanning line on hover */
+.case-file__scan {
+  position: absolute;
+  left: -10%;
+  top: -60px;
+  width: 120%;
+  height: 70px;
+  background: linear-gradient(
+    180deg,
+    transparent 0%,
+    rgba(0, 240, 255, 0.02) 25%,
+    rgba(0, 240, 255, 0.15) 50%,
+    rgba(0, 240, 255, 0.02) 75%,
+    transparent 100%
+  );
+  border-bottom: 1px solid rgba(0, 240, 255, 0.22);
+  box-shadow: 0 0 18px rgba(0, 240, 255, 0.08);
+  opacity: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.case-file:hover .case-file__scan {
+  opacity: 1;
+  animation: caseScan 1.4s linear infinite;
+}
+
+@keyframes caseScan {
+  0% { top: -70px; }
+  100% { top: calc(100% + 70px); }
+}
+
+/* Card header */
+.case-file__head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid rgba(0, 240, 255, 0.15);
+  background: rgba(0, 240, 255, 0.02);
+  position: relative;
+  z-index: 1;
+}
+
+.case-file__id {
+  font-family: var(--ff-mono);
+  font-size: 0.66rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.2);
+  white-space: nowrap;
+}
+
+.case-file__status {
+  font-family: var(--ff-mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  text-align: right;
+  line-height: 1.5;
+}
+
+.case-file__status--dev {
+  color: #ffd166;
+  text-shadow: 0 0 10px rgba(255, 209, 102, 0.2);
+}
+
+.case-file__status--active,
+.case-file__status--completed {
+  color: var(--lime);
+  text-shadow: 0 0 10px rgba(5, 255, 161, 0.25);
+}
+
+.case-file__status--private {
+  color: var(--magenta);
+  text-shadow: 0 0 10px rgba(255, 42, 109, 0.25);
+}
+
+/* Card body */
+.case-file__body {
+  padding: 1.5rem 1.25rem;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.case-file__title {
+  font-family: var(--ff-display);
+  font-size: clamp(1.45rem, 2.8vw, 2rem);
+  font-weight: 700;
+  line-height: 1.1;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+  color: var(--text);
+  margin-bottom: 1rem;
+}
+
+.case-file__desc {
+  font-family: var(--ff-mono);
+  font-size: 0.82rem;
+  line-height: 1.85;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+  max-width: 62ch;
+}
+
+.case-file__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.tech-tag {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.35rem 0.55rem;
+  font-family: var(--ff-mono);
+  font-size: 0.62rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #cfcfcf;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid #2a2a2a;
+}
+
+/* Card footer */
+.case-file__foot {
+  padding: 1rem 1.25rem;
+  border-top: 1px solid #1a1a1a;
+  position: relative;
+  z-index: 1;
+}
+
+.case-file__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--ff-mono);
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cyan);
+  text-shadow: 0 0 10px rgba(0, 240, 255, 0.15);
+  transition: color var(--dur) var(--ease), text-shadow var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+
+.case-file__link-prompt {
+  color: var(--lime);
+  text-shadow: 0 0 8px rgba(5, 255, 161, 0.3);
+  transition: transform var(--dur) var(--ease);
+}
+
+.case-file__link:hover {
+  color: #ffffff;
+  text-shadow: 0 0 14px rgba(0, 240, 255, 0.3);
+}
+
+.case-file__link:hover .case-file__link-prompt {
+  transform: translateX(3px);
+}
+
+.case-file__link--restricted {
+  color: var(--magenta);
+  text-shadow: 0 0 10px rgba(255, 42, 109, 0.15);
+}
+
+.case-file__link--restricted .case-file__link-prompt {
+  color: var(--magenta);
+  text-shadow: 0 0 8px rgba(255, 42, 109, 0.3);
+}
+
+.case-file__link--restricted:hover {
+  color: #fff;
+  text-shadow: 0 0 14px rgba(255, 42, 109, 0.3);
+}
+
+/* ------------------------------------------------------------
+   7. RESPONSIVE
+   ------------------------------------------------------------ */
+@media (min-width: 760px) {
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 1.5rem;
+  }
+}
+
+@media (min-width: 1100px) {
+  .case-file__body {
+    padding: 1.75rem 1.5rem;
+  }
+
+  .case-file__head,
+  .case-file__foot {
+    padding-left: 1.5rem;
+    padding-right: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero {
+    padding-top: calc(var(--nav-h) + 3.5rem);
+  }
+
+  .case-file__head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .case-file__status {
+    text-align: left;
+  }
+
+  .filter-btn {
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+/* ------------------------------------------------------------
+   8. REDUCED MOTION
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  .case-file,
+  .case-file__scan,
+  .filter-btn,
+  .case-file__link,
+  .case-file__link-prompt {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  .case-file:hover .case-file__scan {
+    opacity: 0.25;
+    top: 35%;
+  }
+}
+/* Restricted / Prohibited warning status */
+.case-file__status--restricted,
+.case-file__status--prohibited {
+  color: var(--magenta);
+  text-shadow: 0 0 10px rgba(255, 42, 109, 0.35), 0 0 20px rgba(255, 42, 109, 0.15);
+}

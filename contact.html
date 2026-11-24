@@ -1,0 +1,228 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SECURE_COMMS // Contact</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;700&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        body { background-color: #050505; color: #f5f5f5; }
+        
+        .contact-container {
+            max-width: 1200px;
+            margin: 120px auto 80px;
+            padding: 0 20px;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 50px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .contact-header {
+            grid-column: 1 / -1;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .contact-header h1 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-size: 3rem;
+            margin: 10px 0;
+        }
+
+        .contact-header h1 span { color: #00f0ff; }
+
+        .channel-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            position: relative;
+            z-index: 2;
+        }
+
+        /* Updated Link Styles */
+        .channel-item {
+            border: 1px solid #222;
+            background: #0a0a0a;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .channel-item:hover { 
+            border-color: #00f0ff; 
+            background: #0e0e0e;
+            transform: translateY(-2px);
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.1);
+        }
+
+        .channel-label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: #ff2a6d;
+            letter-spacing: 2px;
+            transition: color 0.3s ease;
+        }
+
+        .channel-item:hover .channel-label {
+            color: #00f0ff;
+        }
+
+        .channel-value {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 1.1rem;
+            word-break: break-all;
+        }
+
+        /* Form Styles */
+        .secure-form {
+            border: 1px solid #222;
+            background: #0a0a0a;
+            padding: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .form-group {
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.8rem;
+            color: #888;
+            margin-bottom: 8px;
+        }
+
+        .form-group input, .form-group textarea {
+            background: #050505;
+            border: 1px solid #333;
+            padding: 12px;
+            color: #fff;
+            font-family: 'JetBrains Mono', monospace;
+            outline: none;
+            transition: border 0.3s ease;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: #00f0ff;
+        }
+
+        .submit-btn {
+            background: transparent;
+            border: 1px solid #00f0ff;
+            color: #00f0ff;
+            padding: 15px 30px;
+            font-family: 'JetBrains Mono', monospace;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+
+        .submit-btn:hover {
+            background: #00f0ff;
+            color: #050505;
+            box-shadow: 0 0 15px rgba(0, 240, 255, 0.4);
+        }
+
+        .pgp-box {
+            margin-top: 30px;
+            background: #0a0a0a;
+            border: 1px dashed #333;
+            padding: 15px;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 0.75rem;
+            color: #666;
+            word-break: break-all;
+            position: relative;
+            z-index: 2;
+        }
+
+        @media (max-width: 768px) {
+            .contact-container { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+
+    <header class="navbar" style="position: fixed; top: 0; width: 100%; background: rgba(5,5,5,0.9); border-bottom: 1px solid #222; padding: 20px; z-index: 100; display: flex; justify-content: space-between; align-items: center;">
+        <div class="logo" style="font-family: 'Space Grotesk'; font-weight: bold; color: #fff;">
+            <span style="color: #ff2a6d;">■</span> SECURE<span style="color: #00f0ff;">_//</span>PORTFOLIO
+        </div>
+        <nav style="font-family: 'JetBrains Mono'; font-size: 0.8rem; display: flex; gap: 20px;">
+            <a href="index.html" style="color: #888; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#888'">HOME</a>
+            <a href="cv.html" style="color: #888; text-decoration: none; transition: color 0.3s;" onmouseover="this.style.color='#fff'" onmouseout="this.style.color='#888'">CV</a>
+            <a href="contact.html" style="color: #00f0ff; text-decoration: none;">CONTACT</a>
+        </nav>
+    </header>
+
+    <main class="contact-container">
+      
+      <!-- Cyber Data Map Animation Background -->
+      <div class="cyber-anim-container" data-anim="matrix" aria-hidden="true"></div>
+<div class="contact-header">
+            <p style="font-family: 'JetBrains Mono'; color: #00f0ff; letter-spacing: 2px;">// SECURE_COMMUNICATIONS</p>
+            <h1>ESTABLISH <span>CONNECTION.</span></h1>
+            <p style="color: #888; font-family: 'JetBrains Mono'; margin-top: 10px;">A clean channel for professional inquiries, collaboration, or security-related conversation.</p>
+        </div>
+
+        <div class="channel-list">
+            <!-- Clickable Email Link -->
+            <a href="mailto:khadraouiwajih3@gmail.com" class="channel-item">
+                <span class="channel-label">[ EMAIL_ADDRESS ]</span>
+                <span class="channel-value">khadraouiwajih3@gmail.com</span>
+            </a>
+            
+            <!-- Clickable GitHub Link (Opens in new tab) -->
+            <a href="https://github.com/X7-VANTHOR" target="_blank" rel="noopener noreferrer" class="channel-item">
+                <span class="channel-label">[ GITHUB_PROFILE ]</span>
+                <span class="channel-value">https://github.com/X7-VANTHOR</span>
+            </a>
+            
+            <!-- Clickable LinkedIn Link (Opens in new tab) -->
+            <a href="https://www.linkedin.com/in/wajih-khadraoui-2067b4359/" target="_blank" rel="noopener noreferrer" class="channel-item">
+                <span class="channel-label">[ LINKEDIN_NETWORK ]</span>
+                <span class="channel-value">https://www.linkedin.com/in/wajih-khadraoui-2067b4359/</span>
+            </a>
+            
+            <div class="pgp-box">
+                <p style="color: #00f0ff; margin-bottom: 10px;">-----BEGIN PGP PUBLIC KEY BLOCK-----</p>
+                <p>mQINBF7... (Your PGP Key here) ...9aBcD</p>
+                <p style="color: #00f0ff; margin-top: 10px;">-----END PGP PUBLIC KEY BLOCK-----</p>
+            </div>
+        </div>
+
+        <div class="secure-form">
+            <form action="#" method="POST">
+                <div class="form-group">
+                    <label>NAME //</label>
+                    <input type="text" placeholder="Enter your name" required>
+                </div>
+                <div class="form-group">
+                    <label>EMAIL //</label>
+                    <input type="email" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label>MESSAGE //</label>
+                    <textarea rows="5" placeholder="Enter your secure message..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">TRANSMIT MESSAGE →</button>
+            </form>
+        </div>
+    </main>
+
+  <script src="atmosphere.js" defer></script>
+  <script src="cyber-anim.js" defer></script>
+</body>
+</html>

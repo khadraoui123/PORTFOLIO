@@ -1,0 +1,310 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Operations & Projects — A database of independent research, security tools, and technical experiments.">
+  <meta name="theme-color" content="#050505">
+  <title>OPERATIONS // CYBER_SEC</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Global Styles & Page-Specific Styles -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="projects.css">
+</head>
+<body class="is-loading">
+  <!-- SCROLL PROGRESS BAR -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar" id="scroll-progress-bar"></div>
+  </div>
+
+  <!-- CUSTOM CURSOR -->
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- PRELOADER -->
+  <div id="preloader" class="preloader" role="status" aria-live="polite" aria-label="System booting">
+    <div class="preloader__inner">
+      <div class="preloader__terminal">
+        <div class="preloader__line">
+          <span class="preloader__prompt">&gt;</span>
+          <span class="preloader__text" id="preloader-text">ACCESSING ARCHIVES...</span>
+          <span class="preloader__caret" aria-hidden="true">_</span>
+        </div>
+        <div class="preloader__bar-track" aria-hidden="true">
+          <div class="preloader__bar-fill" id="preloader-bar"></div>
+        </div>
+        <div class="preloader__meta">
+          <span id="preloader-status">DECRYPTING CASE FILES</span>
+          <span id="preloader-percent">0%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- NAVBAR -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="CYBER_SEC Home">
+        <span class="navbar__logo-icon" aria-hidden="true"></span>
+        <span class="navbar__logo-text">CYBER<span class="accent">_</span>SEC</span>
+      </a>
+
+      <nav class="navbar__nav" id="navbar-nav" aria-label="Primary navigation">
+        <ul class="navbar__links">
+          <li><a href="index.html" class="navbar__link">Home</a></li>
+          <li><a href="about.html" class="navbar__link">About</a></li>
+          <li><a href="expertise.html" class="navbar__link">Expertise</a></li>
+          <li><a href="projects.html" class="navbar__link is-active">Projects</a></li>
+          <li><a href="research.html" class="navbar__link">Research</a></li>
+          <li><a href="defense.html" class="navbar__link">Defense</a></li>
+          <li><a href="community.html" class="navbar__link">Community</a></li>
+          <li><a href="cv.html" class="navbar__link">CV</a></li>
+          <li><a href="contact.html" class="navbar__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="navbar__right">
+        <div class="navbar__status" aria-label="System online">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="status-text">SYSTEM ONLINE</span>
+        </div>
+        <button class="navbar__toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <ul class="mobile-nav__links">
+        <li><a href="index.html" class="mobile-nav__link">Home</a></li>
+        <li><a href="about.html" class="mobile-nav__link">About</a></li>
+        <li><a href="expertise.html" class="mobile-nav__link">Expertise</a></li>
+        <li><a href="projects.html" class="mobile-nav__link is-active">Projects</a></li>
+        <li><a href="research.html" class="mobile-nav__link">Research</a></li>
+        <li><a href="defense.html" class="mobile-nav__link">Defense</a></li>
+        <li><a href="community.html" class="mobile-nav__link">Community</a></li>
+        <li><a href="cv.html" class="mobile-nav__link">CV</a></li>
+        <li><a href="contact.html" class="mobile-nav__link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- PAGE HEADER -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <!-- HACKER ANIMATION BACKGROUND -->
+      <div class="cyber-anim-container" data-anim="network" aria-hidden="true"></div>
+
+      <div class="page-hero__bg" aria-hidden="true">
+        <div class="page-hero__grid"></div>
+        <div class="page-hero__glow"></div>
+      </div>
+      
+      <div class="container page-hero__inner">
+        <p class="page-hero__eyebrow" data-reveal="hero">// DECLASSIFIED ARCHIVES</p>
+        <h1 class="page-hero__title" id="page-title" data-reveal="hero">
+          <span class="sr-only">Operations and Projects</span>
+          <span class="glitch" data-text="OPERATIONS &amp;" aria-hidden="true">OPERATIONS &amp;</span>
+          <span class="glitch page-hero__title--outline" data-text="PROJECTS" aria-hidden="true">PROJECTS</span>
+        </h1>
+        <p class="page-hero__subtitle" data-reveal="hero">A database of independent research, security tools, and technical experiments. Some operations remain classified.</p>
+        <div class="page-hero__meta" data-reveal="hero">
+          <span class="page-hero__meta-item"><span class="meta-dot"></span>ARCHIVE STATUS: ACCESSIBLE</span>
+          <span class="page-hero__meta-item"><span class="meta-dot meta-dot--magenta"></span>CLASSIFIED RECORDS: PRESENT</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTER BAR + PROJECT GRID -->
+    <section class="archive-section" aria-labelledby="archive-heading">
+      <div class="container">
+        <div class="archive-header">
+          <p class="section-tag">// CASE FILE DATABASE</p>
+          <h2 class="section-heading" id="archive-heading">PROJECT <span class="section-heading--outline">ARCHIVE</span></h2>
+        </div>
+
+        <!-- Filter Bar -->
+        <div class="filter-bar" role="toolbar" aria-label="Project filters">
+          <button class="filter-btn is-active" type="button" data-filter="all" aria-pressed="true">[ ALL ]</button>
+          <button class="filter-btn" type="button" data-filter="web-security" aria-pressed="false">[ WEB SECURITY ]</button>
+          <button class="filter-btn" type="button" data-filter="tools" aria-pressed="false">[ TOOLS ]</button>
+          <button class="filter-btn" type="button" data-filter="network" aria-pressed="false">[ NETWORK ]</button>
+          <button class="filter-btn" type="button" data-filter="ai-research" aria-pressed="false">[ AI &amp; RESEARCH ]</button>
+        </div>
+
+        <!-- Project Grid -->
+        <div class="project-grid" id="project-grid">
+          <!-- Project 1 -->
+          <article class="case-file" data-categories="tools network">
+            <div class="case-file__scan" aria-hidden="true"></div>
+            <header class="case-file__head">
+              <span class="case-file__id">[ FILE_ID: 0x01A ]</span>
+              <span class="case-file__status case-file__status--dev">[ STATUS: IN DEVELOPMENT ]</span>
+            </header>
+            <div class="case-file__body">
+              <h3 class="case-file__title">Defensive Security System</h3>
+              <p class="case-file__desc">A long-term project focused on designing a specialized defensive security system to collect telemetry, monitor activities, and identify suspicious behavior.</p>
+              <div class="case-file__tags" aria-label="Tech stack">
+                <span class="tech-tag">[ Python ]</span>
+                <span class="tech-tag">[ Linux ]</span>
+                <span class="tech-tag">[ SIEM ]</span>
+              </div>
+            </div>
+            <footer class="case-file__foot">
+              <a href="#" class="case-file__link" data-cursor="[ DECRYPT ]" aria-label="Access dossier for Defensive Security System">
+                <span class="case-file__link-prompt">&gt;</span>
+                <span>[ ACCESS DOSSIER ]</span>
+              </a>
+            </footer>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="case-file" data-categories="tools">
+            <div class="case-file__scan" aria-hidden="true"></div>
+            <header class="case-file__head">
+              <span class="case-file__id">[ FILE_ID: 0x02B ]</span>
+              <span class="case-file__status case-file__status--active">[ STATUS: ACTIVE ]</span>
+            </header>
+            <div class="case-file__body">
+              <h3 class="case-file__title">Automated OSINT Recon Tool</h3>
+              <p class="case-file__desc">A custom Python script designed to automate information gathering and digital footprinting for authorized security assessments.</p>
+              <div class="case-file__tags" aria-label="Tech stack">
+                <span class="tech-tag">[ Python ]</span>
+                <span class="tech-tag">[ APIs ]</span>
+                <span class="tech-tag">[ OSINT ]</span>
+              </div>
+            </div>
+            <footer class="case-file__foot">
+              <a href="#" class="case-file__link" aria-label="Access dossier for Automated OSINT Recon Tool">
+                <span class="case-file__link-prompt">&gt;</span>
+                <span>[ ACCESS DOSSIER ]</span>
+              </a>
+            </footer>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="case-file" data-categories="web-security tools">
+            <div class="case-file__scan" aria-hidden="true"></div>
+            <header class="case-file__head">
+              <span class="case-file__id">[ FILE_ID: 0x03C ]</span>
+              <span class="case-file__status case-file__status--completed">[ STATUS: COMPLETED ]</span>
+            </header>
+            <div class="case-file__body">
+              <h3 class="case-file__title">Web Vulnerability Scanner</h3>
+              <p class="case-file__desc">A lightweight tool built as a personal hobby project to identify basic OWASP Top 10 vulnerabilities in web applications.</p>
+              <div class="case-file__tags" aria-label="Tech stack">
+                <span class="tech-tag">[ PHP ]</span>
+                <span class="tech-tag">[ JavaScript ]</span>
+                <span class="tech-tag">[ Web Security ]</span>
+              </div>
+            </div>
+            <footer class="case-file__foot">
+              <a href="#" class="case-file__link" aria-label="Access dossier for Web Vulnerability Scanner">
+                <span class="case-file__link-prompt">&gt;</span>
+                <span>[ ACCESS DOSSIER ]</span>
+              </a>
+            </footer>
+          </article>
+
+          <!-- Project 4 -->
+          <article class="case-file" data-categories="ai-research">
+            <div class="case-file__scan" aria-hidden="true"></div>
+            <header class="case-file__head">
+              <span class="case-file__id">[ FILE_ID: 0x04D ]</span>
+              <span class="case-file__status case-file__status--private">[ STATUS: PRIVATE / RESEARCH ]</span>
+            </header>
+            <div class="case-file__body">
+              <h3 class="case-file__title">AI-Driven Log Analyzer (Classified)</h3>
+              <p class="case-file__desc">An experimental research project utilizing LLMs and RAG to analyze system logs for anomalous patterns. Details remain private.</p>
+              <div class="case-file__tags" aria-label="Tech stack">
+                <span class="tech-tag">[ AI ]</span>
+                <span class="tech-tag">[ RAG ]</span>
+                <span class="tech-tag">[ FAISS ]</span>
+              </div>
+            </div>
+            <footer class="case-file__foot">
+              <a href="#" class="case-file__link case-file__link--restricted" aria-label="Access dossier for AI-Driven Log Analyzer (restricted)">
+                <span class="case-file__link-prompt">&gt;</span>
+                <span>[ ACCESS DOSSIER ]</span>
+              </a>
+            </footer>
+          </article>
+
+          <!-- Project 5 -->
+          <article class="case-file" data-categories="tools network">
+            <div class="case-file__scan" aria-hidden="true"></div>
+            <header class="case-file__head">
+              <span class="case-file__id">[ FILE_ID: 0x05E ]</span>
+              <span class="case-file__status case-file__status--restricted">[ STATUS: RESTRICTED ]</span>
+            </header>
+            <div class="case-file__body">
+              <h3 class="case-file__title">Device Control &amp; Exploitation Framework</h3>
+              <p class="case-file__desc">A specialized toolkit designed for remote device manipulation and testing. [ RESTRICTED ACCESS: FOR AUTHORIZED LAB ENVIRONMENTS ONLY ].</p>
+              <div class="case-file__tags" aria-label="Tech stack">
+                <span class="tech-tag">[ Python ]</span>
+                <span class="tech-tag">[ Networking ]</span>
+                <span class="tech-tag">[ Exploitation ]</span>
+              </div>
+            </div>
+            <footer class="case-file__foot">
+              <a href="#" class="case-file__link case-file__link--restricted" aria-label="Access dossier for Device Control and Exploitation Framework (restricted)">
+                <span class="case-file__link-prompt">&gt;</span>
+                <span>[ ACCESS DOSSIER ]</span>
+              </a>
+            </footer>
+          </article>
+
+          <!-- Project 6 -->
+          <article class="case-file" data-categories="tools">
+            <div class="case-file__scan" aria-hidden="true"></div>
+            <header class="case-file__head">
+              <span class="case-file__id">[ FILE_ID: 0x06F ]</span>
+              <span class="case-file__status case-file__status--prohibited">[ STATUS: PROHIBITED ]</span>
+            </header>
+            <div class="case-file__body">
+              <h3 class="case-file__title">Advanced Penetration Testing Suite</h3>
+              <p class="case-file__desc">An automated suite for vulnerability exploitation and payload delivery. [ PROHIBITED FOR UNAUTHORIZED USE ].</p>
+              <div class="case-file__tags" aria-label="Tech stack">
+                <span class="tech-tag">[ Bash ]</span>
+                <span class="tech-tag">[ Metasploit ]</span>
+                <span class="tech-tag">[ Automation ]</span>
+              </div>
+            </div>
+            <footer class="case-file__foot">
+              <a href="#" class="case-file__link case-file__link--restricted" aria-label="Access dossier for Advanced Penetration Testing Suite (prohibited)">
+                <span class="case-file__link-prompt">&gt;</span>
+                <span>[ ACCESS DOSSIER ]</span>
+              </a>
+            </footer>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <p class="footer__copy">&copy; <span id="footer-year"></span> CYBER_SEC. All rights reserved.</p>
+      <p class="footer__tagline">Designed for Security</p>
+    </div>
+  </footer>
+
+  <!-- SCRIPTS -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  
+  <script src="main.js"></script>
+  <script src="animations.js"></script>
+  <script src="filter.js"></script>
+  <script src="projects.js"></script>
+  
+  <script src="cyber-anim.js" defer></script>
+</body>
+</html>

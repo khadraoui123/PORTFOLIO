@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Defensive Security System — A long-term project focused on structured security architecture, telemetry collection, monitoring, and anomaly detection.">
+  <meta name="theme-color" content="#050505">
+  <title>DEFENSIVE SECURITY SYSTEM // CYBER_SEC</title>
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+
+  <!-- Global Styles (Phase 1) -->
+  <link rel="stylesheet" href="style.css">
+  <!-- Page-Specific Styles -->
+  <link rel="stylesheet" href="defense.css">
+</head>
+<body class="is-loading">
+  <!-- ============================================================
+       SCROLL PROGRESS BAR
+       ============================================================ -->
+  <div class="scroll-progress" aria-hidden="true">
+    <div class="scroll-progress__bar" id="scroll-progress-bar"></div>
+  </div>
+
+  <!-- ============================================================
+       CUSTOM CURSOR
+       ============================================================ -->
+  <div class="cursor-dot" id="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ============================================================
+       PRELOADER
+       ============================================================ -->
+  <div id="preloader" class="preloader" role="status" aria-live="polite" aria-label="System booting">
+    <div class="preloader__inner">
+      <div class="preloader__terminal">
+        <div class="preloader__line">
+          <span class="preloader__prompt">&gt;</span>
+          <span class="preloader__text" id="preloader-text">INITIALIZING SOC DASHBOARD...</span>
+          <span class="preloader__caret" aria-hidden="true">_</span>
+        </div>
+        <div class="preloader__bar-track" aria-hidden="true">
+          <div class="preloader__bar-fill" id="preloader-bar"></div>
+        </div>
+        <div class="preloader__meta">
+          <span id="preloader-status">LOADING DEFENSIVE MODULES</span>
+          <span id="preloader-percent">0%</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ============================================================
+       NAVBAR (Defense active)
+       ============================================================ -->
+  <header class="navbar" id="navbar" role="banner">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="CYBER_SEC Home">
+        <span class="navbar__logo-icon" aria-hidden="true"></span>
+        <span class="navbar__logo-text">CYBER<span class="accent">_</span>SEC</span>
+      </a>
+
+      <nav class="navbar__nav" id="navbar-nav" aria-label="Primary navigation">
+        <ul class="navbar__links">
+          <li><a href="index.html" class="navbar__link">Home</a></li>
+          <li><a href="about.html" class="navbar__link">About</a></li>
+          <li><a href="expertise.html" class="navbar__link">Expertise</a></li>
+          <li><a href="projects.html" class="navbar__link">Projects</a></li>
+          <li><a href="research.html" class="navbar__link">Research</a></li>
+          <li><a href="defense.html" class="navbar__link is-active">Defense</a></li>
+          <li><a href="community.html" class="navbar__link">Community</a></li>
+          <li><a href="cv.html" class="navbar__link">CV</a></li>
+          <li><a href="contact.html" class="navbar__link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="navbar__right">
+        <div class="navbar__status" aria-label="System online">
+          <span class="status-dot" aria-hidden="true"></span>
+          <span class="status-text">SYSTEM ONLINE</span>
+        </div>
+        <button class="navbar__toggle" id="nav-toggle" type="button" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile navigation">
+      <ul class="mobile-nav__links">
+        <li><a href="index.html" class="mobile-nav__link">Home</a></li>
+        <li><a href="about.html" class="mobile-nav__link">About</a></li>
+        <li><a href="expertise.html" class="mobile-nav__link">Expertise</a></li>
+        <li><a href="projects.html" class="mobile-nav__link">Projects</a></li>
+        <li><a href="research.html" class="mobile-nav__link">Research</a></li>
+        <li><a href="defense.html" class="mobile-nav__link is-active">Defense</a></li>
+        <li><a href="community.html" class="mobile-nav__link">Community</a></li>
+        <li><a href="cv.html" class="mobile-nav__link">CV</a></li>
+        <li><a href="contact.html" class="mobile-nav__link">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <!-- ==========================================================
+         PAGE HEADER
+         ========================================================== -->
+    <section class="page-hero" aria-labelledby="page-title">
+      <div class="page-hero__bg" aria-hidden="true">
+        <div class="page-hero__grid"></div>
+      <div class="cyber-anim-container" data-anim="globe" aria-hidden="true"></div>
+<div class="page-hero__glow"></div>
+        <div class="page-hero__glow page-hero__glow--magenta"></div>
+      </div>
+      <div class="container page-hero__inner">
+        <p class="page-hero__eyebrow" data-reveal="hero">// SYSTEM ARCHITECTURE &amp; TELEMETRY</p>
+        <h1 class="page-hero__title" id="page-title" data-reveal="hero">
+          <span class="sr-only">Defensive Security System</span>
+          <span class="glitch" data-text="DEFENSIVE" aria-hidden="true">DEFENSIVE</span>
+          <span class="glitch page-hero__title--outline" data-text="SECURITY SYSTEM" aria-hidden="true">SECURITY SYSTEM</span>
+        </h1>
+        <p class="page-hero__subtitle" data-reveal="hero">A long-term project focused on designing a specialized defensive security system. Aims to explore structured security architecture capable of collecting system telemetry, monitoring activities, and identifying suspicious behavior.</p>
+        <div class="page-hero__meta" data-reveal="hero">
+          <span class="page-hero__meta-item"><span class="meta-dot"></span>DASHBOARD: LIVE</span>
+          <span class="page-hero__meta-item"><span class="meta-dot meta-dot--magenta"></span>BUILD STATE: IN DEVELOPMENT</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- ==========================================================
+         SOC DASHBOARD GRID
+         ========================================================== -->
+    <section class="dashboard-section" aria-labelledby="dashboard-heading">
+      <div class="container">
+        <div class="dashboard-header">
+          <p class="section-tag">// SOC DASHBOARD</p>
+          <h2 class="section-heading" id="dashboard-heading">SYSTEM <span class="section-heading--outline">OVERVIEW</span></h2>
+        </div>
+
+        <div class="dashboard-grid">
+          <!-- Panel 1: Project Status -->
+          <article class="dash-panel dash-panel--status" data-panel>
+            <header class="dash-panel__head">
+              <span class="dash-panel__id">[ PROJECT_STATUS ]</span>
+              <span class="dash-panel__indicator dash-panel__indicator--warn" aria-hidden="true"></span>
+            </header>
+            <div class="dash-panel__body">
+              <p class="dash-panel__label">CURRENT STATE</p>
+              <p class="status-value">IN DEVELOPMENT</p>
+              <div class="progress-block">
+                <div class="progress-block__meta">
+                  <span class="progress-block__phase">Phase 2 of 4: Core Architecture</span>
+                  <span class="progress-block__percent" id="project-progress-percent">50%</span>
+                </div>
+                <div class="progress-bar" role="progressbar" aria-label="Project progress" aria-valuemin="0" aria-valuemax="100" aria-valuenow="50">
+                  <div class="progress-bar__track">
+                    <div class="progress-bar__fill" id="project-progress-fill"></div>
+                  </div>
+                </div>
+                <div class="progress-block__stages" aria-hidden="true">
+                  <span class="stage is-complete">01 RESEARCH</span>
+                  <span class="stage is-active">02 ARCHITECTURE</span>
+                  <span class="stage">03 ENGINE</span>
+                  <span class="stage">04 DEPLOYMENT</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Panel 2: Core Capabilities -->
+          <article class="dash-panel dash-panel--capabilities" data-panel>
+            <header class="dash-panel__head">
+              <span class="dash-panel__id">[ CORE_CAPABILITIES ]</span>
+              <span class="dash-panel__indicator dash-panel__indicator--ok" aria-hidden="true"></span>
+            </header>
+            <div class="dash-panel__body">
+              <p class="dash-panel__label">SYSTEM MODULES</p>
+              <ul class="capability-list">
+                <li class="capability-item">
+                  <span class="capability-item__name"><span class="capability-item__prompt">&gt;</span> Telemetry Collection</span>
+                  <span class="capability-item__status">[ ACTIVE ]</span>
+                </li>
+                <li class="capability-item">
+                  <span class="capability-item__name"><span class="capability-item__prompt">&gt;</span> Activity Monitoring</span>
+                  <span class="capability-item__status">[ ACTIVE ]</span>
+                </li>
+                <li class="capability-item">
+                  <span class="capability-item__name"><span class="capability-item__prompt">&gt;</span> Anomaly Detection</span>
+                  <span class="capability-item__status">[ ACTIVE ]</span>
+                </li>
+                <li class="capability-item">
+                  <span class="capability-item__name"><span class="capability-item__prompt">&gt;</span> Log Analysis</span>
+                  <span class="capability-item__status">[ ACTIVE ]</span>
+                </li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- Panel 3: System Architecture Diagram -->
+          <article class="dash-panel dash-panel--architecture" data-panel>
+            <header class="dash-panel__head">
+              <span class="dash-panel__id">[ SYSTEM_ARCHITECTURE ]</span>
+              <span class="dash-panel__indicator dash-panel__indicator--ok" aria-hidden="true"></span>
+            </header>
+            <div class="dash-panel__body">
+              <p class="dash-panel__label">DATA FLOW DIAGRAM</p>
+              <div class="architecture" aria-label="System architecture flow: Data Sources to Collection Agent to Analysis Engine to Alert System">
+                <div class="architecture__flow">
+                  <div class="arch-node">
+                    <span class="arch-node__tag">INPUT</span>
+                    <span class="arch-node__title">[ Data Sources ]</span>
+                    <span class="arch-node__sub">Endpoints / Logs / Events</span>
+                  </div>
+
+                  <div class="arch-connector" aria-hidden="true">
+                    <span class="arch-connector__line"></span>
+                    <span class="arch-connector__pulse"></span>
+                    <span class="arch-connector__arrow"></span>
+                  </div>
+
+                  <div class="arch-node">
+                    <span class="arch-node__tag">INGEST</span>
+                    <span class="arch-node__title">[ Collection Agent ]</span>
+                    <span class="arch-node__sub">Telemetry Normalization</span>
+                  </div>
+
+                  <div class="arch-connector" aria-hidden="true">
+                    <span class="arch-connector__line"></span>
+                    <span class="arch-connector__pulse"></span>
+                    <span class="arch-connector__arrow"></span>
+                  </div>
+
+                  <div class="arch-node">
+                    <span class="arch-node__tag">PROCESS</span>
+                    <span class="arch-node__title">[ Analysis Engine ]</span>
+                    <span class="arch-node__sub">Correlation / Detection</span>
+                  </div>
+
+                  <div class="arch-connector" aria-hidden="true">
+                    <span class="arch-connector__line"></span>
+                    <span class="arch-connector__pulse"></span>
+                    <span class="arch-connector__arrow"></span>
+                  </div>
+
+                  <div class="arch-node arch-node--alert">
+                    <span class="arch-node__tag">OUTPUT</span>
+                    <span class="arch-node__title">[ Alert System ]</span>
+                    <span class="arch-node__sub">Notifications / Response</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Panel 4: Tech Stack -->
+          <article class="dash-panel dash-panel--stack" data-panel>
+            <header class="dash-panel__head">
+              <span class="dash-panel__id">[ TECH_STACK ]</span>
+              <span class="dash-panel__indicator dash-panel__indicator--ok" aria-hidden="true"></span>
+            </header>
+            <div class="dash-panel__body">
+              <p class="dash-panel__label">IMPLEMENTATION LAYER</p>
+              <div class="stack-tags" aria-label="Technology stack">
+                <span class="stack-tag">[ Python ]</span>
+                <span class="stack-tag">[ Linux ]</span>
+                <span class="stack-tag">[ SQLite ]</span>
+                <span class="stack-tag">[ Networking ]</span>
+              </div>
+              <div class="stack-meta">
+                <div class="stack-meta__row">
+                  <span class="stack-meta__label">ENVIRONMENT</span>
+                  <span class="stack-meta__value">LAB / DEVELOPMENT</span>
+                </div>
+                <div class="stack-meta__row">
+                  <span class="stack-meta__label">DEPLOYMENT</span>
+                  <span class="stack-meta__value stack-meta__value--warn">PENDING</span>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Panel 5: Live Telemetry Feed -->
+          <article class="dash-panel dash-panel--telemetry" data-panel>
+            <header class="dash-panel__head">
+              <span class="dash-panel__id">[ TELEMETRY_FEED ]</span>
+              <span class="dash-panel__indicator dash-panel__indicator--ok" aria-hidden="true"></span>
+            </header>
+            <div class="dash-panel__body">
+              <p class="dash-panel__label">LIVE STREAM</p>
+              <div class="telemetry-terminal" aria-label="Live telemetry feed">
+                <div class="telemetry-terminal__bar">
+                  <span class="telemetry-terminal__title">telemetry_stream.log</span>
+                  <span class="telemetry-terminal__live"><span class="telemetry-terminal__live-dot" aria-hidden="true"></span>LIVE</span>
+                </div>
+                <div class="telemetry-terminal__screen" id="telemetry-screen">
+                  <div class="telemetry-terminal__output" id="telemetry-output" aria-live="polite" aria-relevant="additions"></div>
+                  <div class="telemetry-terminal__current" aria-hidden="true">
+                    <span class="telemetry-terminal__line" id="telemetry-current"></span><span class="telemetry-terminal__cursor">_</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================================================
+       FOOTER
+       ============================================================ -->
+  <footer class="footer" role="contentinfo">
+    <div class="footer__inner">
+      <p class="footer__copy">&copy; <span id="footer-year"></span> CYBER_SEC. All rights reserved.</p>
+      <p class="footer__tagline">Designed for Security</p>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+  <script src="main.js"></script>
+  <script src="animations.js"></script>
+  <script src="defense.js"></script>
+  <script src="cyber-anim.js" defer></script>
+</body>
+</html>
